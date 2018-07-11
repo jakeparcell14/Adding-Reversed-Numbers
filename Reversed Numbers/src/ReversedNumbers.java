@@ -19,11 +19,12 @@ public class ReversedNumbers
 		int index = 0;
 		
 		//perform the amount of given cases
-		while(cases > 0)
+		while(index < cases)
 		{
 			String entry1 = "";
 			String entry2 = "";
 
+			// take in entries from user
 			if(in.hasNext())
 			{
 				entry1 = in.next();
@@ -34,16 +35,19 @@ public class ReversedNumbers
 			int num1 = Integer.parseInt(reverseNumber(entry1));
 			int num2 = Integer.parseInt(reverseNumber(entry2));
 			
+			// add reversed numbers
 			String sum = Integer.toString(num1 + num2);
 			
+			// reverse sum
 			sum = reverseNumber(sum);
 			
+			// save sum in an array to be printed later
 			sums[index] = Integer.parseInt(sum);
 
-			cases--;
 			index++;
 		}
 		
+		// print results
 		for(int i = 0; i < sums.length; i++)
 		{
 			System.out.println(sums[i]);
